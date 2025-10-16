@@ -1,0 +1,1232 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="csrf-token" content="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- adding image while sharing the link -->
+        <meta property="og:title" content="Justagg">
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Justagg profile page">
+        <meta property="og:url" content="https://profile.justagg.com/">
+                    <meta property="og:image" content="https://apis.justagg.com/images/profilePic/6748212769b2a.jpg">
+            <!-- image adding end -->
+
+
+    <title>
+       Justagg
+    </title>
+        <link rel = "icon" href ="" type = "image/x-icon">
+    
+    
+    <style>
+
+
+
+  #preloaders{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+          }
+
+          .loader {
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+border-top: 4px solid black;
+   border-right: 4px solid black;
+  border-bottom: 4px solid black;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+        * {
+
+            font-family: Montserrat;
+        }
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+        }
+
+        .flexitems {
+
+            width: 100%;
+            background: white;  
+            min-height: 100vh;
+            margin-top: -7px;
+            border-radius: 8px;
+        }
+
+@media screen and (min-width: 430px) {
+  .container, .flexitems, .form_flexitems {
+            width: 400px;
+        }
+}
+
+        .flexbox, .form_flexbox {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height:220px;
+        }
+        .cover_img, .form_cover_img{
+           
+            width: 100%; 
+            height: 100%;
+            object-fit:cover;
+            box-shadow: 0  4px 5px rgb(0 0 0 / 10%);
+
+        }
+
+        .logo{
+            display: flex;
+            align-items: center;
+
+            margin-top: 10px;
+            position:relative;
+        }
+        .logoImage_div{
+            position:absolute;
+            bottom:-30%;
+            left:115px;
+            z-index:2;
+
+        }
+        .logoImage{
+            background-color: white;
+            height:50px;
+            width:50px;
+            border-radius:50%; 
+            object-fit:cover;
+            border:4px solid #ffffff;
+        }
+     
+        .profilePic, .form_profile_img{
+            width: 125px;
+            height: 125px;
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0 0 4px 4px rgb(0 0 0 / 10%);
+            background-color: black;
+            top: 65%;
+            left: 10px;
+            z-index: 1;
+            object-fit:cover;
+            border:4px solid #ffffff;
+        }
+        
+        @media screen and (max-width: 378px) {
+            .profilePic, .form_profile_img {
+                width: 110px;
+            height: 110px;
+            top: 68%;
+        }
+        .logoImage{
+            height:45px;
+            width:45px;
+            
+        }
+        .logoImage_div{
+            bottom:-28%;
+            left:105px;
+        }
+}
+    
+         .bio {
+            
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            width: 96%;
+            margin-left:2%;
+            padding-top: 5px;
+            margin-top: 5px;
+            background-color: white;
+        }
+        #user_name, #user_bio, #user_company{
+    text-align: left; 
+    overflow: hidden; 
+    word-break: break-word;
+    color: black;
+    
+              margin-left: 45%;  
+        max-width:53%; 
+             
+     
+}
+                .connect_btn{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+         .connect_btn a{
+            width: 80%;
+            color:white;
+            background-color: #000000;
+            outline: none;
+            border: none;
+            border-radius: 25px;
+            height: 54px;
+            margin-top: 12px;
+            font-size: 1.3rem;
+            font-weight:bold;
+            cursor:pointer;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    .social_links {
+            display: flex;
+           
+            margin-top: 25px;
+            width: 92%;
+            margin-left: 4%;
+             align-content: flex-start;
+             flex-wrap: wrap;
+        }
+        .link {
+            display: flex;
+            margin-bottom: 0px;
+            flex-direction:column;
+            width: 25%;
+            margin: 0px 4.4% 12px 4.4%;
+            align-items: center;
+            text-decoration:none;
+            color:black;
+        }
+        .link:nth-child(3n){
+            margin: 0px 0% 0px 8%;
+        }
+         .link:nth-child(3n+1){
+            margin: 0px 8% 0px 0%;
+        }
+        .link p{
+            font-size:0.8rem;
+            text-align:center;
+            margin-top: 3px;
+            margin-bottom: 2px;
+            cursor:pointer;
+        }
+
+        .link button{
+            border: none;
+            background:none;
+            padding: 0px;
+            margin: 0px 2px;
+            cursor:pointer;
+        }
+
+    .link_img{
+        width: 92px;
+        height: 92px;
+        border-radius: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 0px;   
+    }
+    
+    
+    
+.pay_modal{
+    width:370px;
+    margin-left:-185px;
+    display: none;
+    justify-content: center; 
+    position: fixed;
+    top: 250px;
+    left:50%;
+    z-index: 5;
+
+}
+
+.pay_modal_wrapper{
+
+   max-height:80vh;
+   width:90%; 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   background:#ffffff;
+    border-radius: 10px;
+   position: relative;
+   box-shadow: 0 0 10px 2px rgb(0 0 0 / 9%);
+}
+.pay_modal_heading{
+    margin-top:10px;
+    width:100%;
+    text-align:center;
+    font-weight:bold;
+    font-size:17px;
+   background:#ffffff;
+    
+}
+.pay_modal_close{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    border-radius:50%;
+    width:30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    cursor:pointer;
+}
+
+.pay_modal_content {
+    display: flex;
+    margin: 30px 10px 20px 10px;
+    flex-direction: column;
+    align-items:center;
+    width: 90%;
+}
+.qr_download_icon{
+    position: absolute;
+    top: 230px;
+    right: 30px;
+
+}
+
+
+    .images_area{
+        width: 88%;
+        margin-left: 6%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .images_area img{
+        width: 46%;
+        height: 70px;
+        border:1px solid #b7b7b7;
+    }
+
+    .video_area{
+        margin-top: 25px;
+         width: 88%;
+        margin-left: 6%;
+        height: 190px;
+        border:1px solid #b7b7b7;
+    }
+    .video_area iframe{
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+
+
+.form_flexitems {
+
+            width: 100%;
+            background: #F5F6FA;
+            min-height: 100vh;
+           
+        }
+
+.form_close{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    border-radius:50%;
+    width:30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+
+}
+
+
+     .form_contact_info{
+            
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 92%;
+            margin-left: 4%;
+            margin-top: 80px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: white;        
+        }
+        .form_img_div{
+            margin-left:4%; 
+            width:93.55px; 
+            display:flex; 
+            justify-content:center;
+        }
+
+    .form_img_div img{
+        border-radius:50%; 
+        margin-top:10px;
+        object-fit:cover
+    }
+
+    .form_img_btn{
+        font-size:14px;
+        width: 90px; 
+        text-align:center; 
+        padding:4px 8px; 
+        color:white; 
+        background:#000000; 
+        border-radius:15px;
+        cursor:pointer;
+    }
+
+        .input_field{
+
+            border-radius: 24px;
+            border: 1px solid lightgray;
+            margin-bottom: 12px;
+            margin-top: 5px;
+            height: 40px;
+            padding: 0px 3%;
+            outline: none;
+            background: none;  
+        }
+
+        .input_field:focus, 
+        .input_field:active{
+        border: 1px solid black;
+        }
+.input_field:-webkit-autofill,
+.input_field:-webkit-autofill:hover, 
+.input_field:-webkit-autofill:focus, 
+.input_field:-webkit-autofill:active{
+     -webkit-box-shadow: 0 0 0 30px white inset !important;  
+     -webkit-text-fill-color: black ;
+}
+
+.input_field, .input_label{
+        width: 86%;
+        margin-left: 4%;
+    }
+     .input_label{
+      
+        margin-left: 5%;
+    }
+
+    #form_more_btn{
+
+       color:black;
+       padding: 3px 0px;
+       cursor: pointer;
+       width: 120px;
+       margin-left: 4%;
+       text-align: center;
+       font-size: 14px;
+       margin-bottom:10px; 
+       display:flex;
+       align-items:center;
+    }
+     
+.submit{
+           border-radius: 24px;
+            border: none;
+            color: white;
+            font-size: 15px;
+            height: 40px;
+            width: 92%;
+            background-color: #000000;
+            margin-top: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+             margin-left: 4%;
+            margin-bottom: 15px;
+           }
+
+/* alert */
+
+    .alert_msg_bar
+    {
+        background: rgb(237, 247, 237);
+        display: none;
+        justify-content: space-between;
+        padding: 0px 10px;
+        align-items: center;
+        width: 270px;
+        min-height: 65px;
+        height: 65px;
+        position: fixed;
+        font-size: 0.9rem;
+        z-index: 6;
+        top: 30%;
+    left: 50%;
+    margin-top: -80px; 
+    margin-left: -135px;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 6px;
+    box-shadow: none;
+    } 
+
+
+    </style>
+
+  
+</head>
+
+<body> 
+ 
+
+    <div id="preloaders">
+        <img src="justagg-transparent.png" width="205" height="50">
+        
+  </div>
+    <div class="container" id="container" style="visibility: hidden;
+      display:flex;            ">
+
+        <div class="flexitems">
+            
+         
+
+
+            <div class="flexbox">
+
+                   
+                           
+                          
+
+                         <img class="cover_img" src="https://apis.justagg.com/images/coverPic/67481db443c23.jpg" >
+                       
+          
+                           <img class="profilePic" src="https://apis.justagg.com/images/profilePic/6748212769b2a.jpg" alt="" srcset="">
+                       
+
+            
+
+                       <div class="logoImage_div">
+                <img class="logoImage" src="https://apis.justagg.com/images/userLogo/67482166dba8d.jpg">
+            </div>
+                        
+        </div>
+            <div class="bio">
+                    
+                    <div style="width: 100%;">
+               <bold> <strong><p id="user_name" style=" margin-top: 0px; margin-bottom: 3px; font-weight:1100; font-size: 20px; "> ankit rathore </p></strong></bold>
+                    </div>
+                    
+                    <div style="width: 100%;">
+                    <p id="user_bio" style=" margin-top: 1px; font-weight:500; font-size: 16px;  margin-bottom: 0px;"> Owner of social media</p>
+                    </div>
+
+                    <!--<div style="width: 100%;">-->
+                    <!--    <p id="user_company" style=" margin-top: 1px; font-weight:500; margin-left: 45%; font-size: 16px; margin-bottom: 0px;"> Game and Gamer </p>-->
+                    <!--    </div>-->
+
+                    <p style=" max-width:90%; word-break: break-word; overflow: hidden; margin-top: 15px; color: #000000; font-size: 14.2px; margin-bottom: 1px; text-align:center;"><br></p>
+                </div>
+
+<!----------------------------- work to handle vcf file -------------->
+               <input type="hidden" id="user_email" value="eventthemeindia@gmail.com">
+               <input type="hidden" id="user_username" value="v53n3z787">
+               
+               <!---->
+               <!--<input type="hidden" id="vcf_true" value="1">-->
+               <!---->
+<!---------------------------------- work to handle vcf end -------------->
+                <div class="connect_btn">         
+                <a id="connect_btn">
+                 <!--<img width="35" height="25" src="/handshake.png" style="margin-top: 2px">&nbsp&nbsp-->
+                 Connect
+                 </a> 
+
+                </div>
+
+              
+              
+                             
+                        <div class="social_links" id="columns">
+                                                
+                                    
+                                        <a target="_blank" href="https://wa.me/+919315425520" class="link" onclick="socialClick('Whatsapp', 'https://wa.me/+919315425520', '6357', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/whatsapp.png">
+                        </button>
+                        <p>Whatsapp</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                        <a target="_blank" href="tel:+919315425520" class="link" onclick="socialClick('Phone', 'tel:+919315425520', '6358', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/phone.png">
+                        </button>
+                        <p>Phone</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                                        <a target="_blank" href="mailto:mallikahirani@gmail.com" class="link" onclick="socialClick('Gmail', 'mailto:mallikahirani@gmail.com', '6359', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/gmail.png">
+                        </button>
+                        <p>Gmail</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                         <a target="_blank" href="https://maps.app.goo.gl/JYSZqZVhpnrDNYjo8" class="link" onclick="socialClick('Address', 'https://maps.app.goo.gl/JYSZqZVhpnrDNYjo8', '6360', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/address.png">
+                        </button>
+                        <p>Address</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                                        <a target="_blank" href="sms:+919315425520" class="link" onclick="socialClick('Message', 'sms:+919315425520', '6361', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/message.png">
+                        </button>
+                        <p>Message</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                                        <a target="_blank" href="https://www.facebook.com/YagatibyEventThemeIndia" class="link" onclick="socialClick('Facebook', 'https://www.facebook.com/YagatibyEventThemeIndia', '6363', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/facebook.png">
+                        </button>
+                        <p>Facebook</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                                        <a target="_blank" href="https://t.me/Mallikahiranidelhi" class="link" onclick="socialClick('Telegram', 'https://t.me/Mallikahiranidelhi', '6364', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/telegram.png">
+                        </button>
+                        <p>Telegram</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                                        <a target="_blank" href="https://www.youtube.com/@yagatievent" class="link" onclick="socialClick('Youtube', 'https://www.youtube.com/@yagatievent', '6365', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/youtube.png">
+                        </button>
+                        <p>Youtube</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                                        <a target="_blank" href="https://drive.google.com/file/d/104R3v5KIhVfOxOHIoWHQkFYSFNhe2c6a/view" class="link" onclick="socialClick('Catalog', 'https://drive.google.com/file/d/104R3v5KIhVfOxOHIoWHQkFYSFNhe2c6a/view', '6366', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/document.png">
+                        </button>
+                        <p>Catalog</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                                        <a target="_blank" href="https://www.instagram.com/gameandgamerdelhi" class="link" onclick="socialClick('Instagram', 'https://www.instagram.com/gameandgamerdelhi', '6367', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/instagram.png">
+                        </button>
+                        <p>Instagram</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                                        <a target="_blank" href="https://search.google.com/local/writereview?placeid=ChIJCewGjJUHDTkRsR8CcKGEQmE" class="link" onclick="socialClick('Google Reviews', 'https://search.google.com/local/writereview?placeid=ChIJCewGjJUHDTkRsR8CcKGEQmE', '6369', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/customLinks/67738f98850af.jpg">
+                        </button>
+                        <p>Google Reviews</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                 
+                 
+                 
+                <div class="link" onclick="">
+                    <button  onclick="openPayModal(11), socialClick('Google Pay', 'mallikahalder14@okhdfcbank', '6370', '45469')">
+                    <img class="link_img " src="https://apis.justagg.com/images/socialLinks/google pay.png">
+                    </button>
+                    <p>Google Pay</p> 
+                    
+                     <div class="pay_modal" id="pay_modal11"   style="top:160px !important" >
+                      <div class="pay_modal_wrapper">
+                        <div class="pay_modal_heading">Account Detail</div>
+                        <div class="pay_modal_close" onclick="closePayModal()">
+                            <img width="27" height="27" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/multiply.png"/>
+                        </div>
+                        <div class="pay_modal_content">
+                                                         <img id="qrImage" width="200" height="200" src="https://apis.justagg.com/images/qrImages/674823da2100d.jpg" alt="QR Code">
+                            <a href="/downloadUpiQr/6370"  class="qr_download_icon">
+                               <img width="24" height="24" src="https://img.icons8.com/material-rounded/96/download--v1.png" alt="Download">
+                            </a>
+                             
+                          <p style="margin:22px 0px; font-size:18px"><strong>ID:</strong> mallikahalder14@okhdfcbank&nbsp <a onclick="copyPayId('mallikahalder14@okhdfcbank')" class="fa fa-copy" id="copy_link"
+                        style="color:black;font-size: 1rem;cursor: pointer;"></a></p>
+                    
+                          <br>
+                      </div> 
+                    </div>
+                </div>
+                </div>
+               
+                 
+
+                                                
+                                    
+                 
+                 
+                 
+                <div class="link" onclick="">
+                    <button  onclick="openPayModal(12), socialClick('Paytm', '9871137547@ptaxis', '6371', '45469')">
+                    <img class="link_img " src="https://apis.justagg.com/images/socialLinks/paytm.png">
+                    </button>
+                    <p>Paytm</p> 
+                    
+                     <div class="pay_modal" id="pay_modal12"   style="top:160px !important" >
+                      <div class="pay_modal_wrapper">
+                        <div class="pay_modal_heading">Account Detail</div>
+                        <div class="pay_modal_close" onclick="closePayModal()">
+                            <img width="27" height="27" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/multiply.png"/>
+                        </div>
+                        <div class="pay_modal_content">
+                                                         <img id="qrImage" width="200" height="200" src="https://apis.justagg.com/images/qrImages/67482400991d6.jpg" alt="QR Code">
+                            <a href="/downloadUpiQr/6371"  class="qr_download_icon">
+                               <img width="24" height="24" src="https://img.icons8.com/material-rounded/96/download--v1.png" alt="Download">
+                            </a>
+                             
+                          <p style="margin:22px 0px; font-size:18px"><strong>ID:</strong> 9871137547@ptaxis&nbsp <a onclick="copyPayId('9871137547@ptaxis')" class="fa fa-copy" id="copy_link"
+                        style="color:black;font-size: 1rem;cursor: pointer;"></a></p>
+                    
+                          <br>
+                      </div> 
+                    </div>
+                </div>
+                </div>
+               
+                 
+
+                                                
+                                    
+                 
+                 
+                 
+                <div class="link" onclick="">
+                    <button  onclick="openPayModal(13), socialClick('Phonepe', '9871137547-2@ibl', '6372', '45469')">
+                    <img class="link_img " src="https://apis.justagg.com/images/socialLinks/phonepe.png">
+                    </button>
+                    <p>Phonepe</p> 
+                    
+                     <div class="pay_modal" id="pay_modal13"   style="top:160px !important" >
+                      <div class="pay_modal_wrapper">
+                        <div class="pay_modal_heading">Account Detail</div>
+                        <div class="pay_modal_close" onclick="closePayModal()">
+                            <img width="27" height="27" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/multiply.png"/>
+                        </div>
+                        <div class="pay_modal_content">
+                                                         <img id="qrImage" width="200" height="200" src="https://apis.justagg.com/images/qrImages/6748245d40a5b.jpg" alt="QR Code">
+                            <a href="/downloadUpiQr/6372"  class="qr_download_icon">
+                               <img width="24" height="24" src="https://img.icons8.com/material-rounded/96/download--v1.png" alt="Download">
+                            </a>
+                             
+                          <p style="margin:22px 0px; font-size:18px"><strong>ID:</strong> 9871137547-2@ibl&nbsp <a onclick="copyPayId('9871137547-2@ibl')" class="fa fa-copy" id="copy_link"
+                        style="color:black;font-size: 1rem;cursor: pointer;"></a></p>
+                    
+                          <br>
+                      </div> 
+                    </div>
+                </div>
+                </div>
+               
+                 
+
+                                                
+                                    
+                                        <a target="_blank" href="https://www.facetime.com/+919871137547" class="link" onclick="socialClick('Facetime', 'https://www.facetime.com/+919871137547', '6373', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/facetime.png">
+                        </button>
+                        <p>Facetime</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                                        <a target="_blank" href="https://www.mygamebazar.com" class="link" onclick="socialClick('Website', 'https://www.mygamebazar.com', '6385', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/website.png">
+                        </button>
+                        <p>Website</p> 
+                    </a>
+                                  
+
+                                                
+                                    
+                                        <a target="_blank" href="https://www.Twitter.com/gamebazardelhi" class="link" onclick="socialClick('Twitter X', 'https://www.Twitter.com/gamebazardelhi', '7658', '45469')">
+                        <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">                      
+                        <button type="submit">
+                             
+                        <img class="link_img " src="https://apis.justagg.com/images/socialLinks/twitter.png">
+                        </button>
+                        <p>Twitter X</p> 
+                    </a>
+                                  
+
+                                               
+                 </div>  <!-- social links end -->
+                
+            
+ 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <br>
+                
+                <!-- footer line -->
+                <div class="footer" style="width:100%; display:flex; justify-content:center; align-items:center; height:50px;">
+                    <span style="color: black;width:90%; text-align:center">
+                        <a href="http://justagg.com/" style="color: black; font-size: 17px;text-decoration: none; display:Flex; align-items:center; justify-content:center ">Powered By&nbsp<img src="justagg-transparent.png" style="margin-top:2px" width="80" height="20"></a>
+                    </span>
+                </div>
+                <br>
+                <!-- footer line end-->
+            
+
+        </div>
+            </div>
+
+
+
+
+
+
+    <div class="container" id="modal" style="z-index: 1; top:100vh; position:absolute; display:none;">
+        <form action="" method="post" enctype="multipart/form-data" class="form_flexitems" id="form_flexitems">
+            <input type="hidden" name="_token" value="21cDuguTTQsqedMLu9UfX9Z0wn84D3cHOfAaODx2">
+            <div class="form_flexbox">
+                 <div class="form_close">
+        <img width="27" height="27" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/multiply.png"/>
+        </div>
+
+                            <img class="form_cover_img" id="form_cover_image" src="https://apis.justagg.com/images/coverPic/67481db443c23.jpg" >
+                       
+                               <img class="form_profile_img" id="form_profile_image" src="https://avatars.githubusercontent.com/u/34296950?s=64&v=4" alt="" srcset="">
+                       
+          
+        </div>
+
+        
+           <div class="form_contact_info"> 
+                   
+                   <p style="margin-left:15px; margin-bottom: 0px; font-weight:600">Contact me </p>
+
+                   <p style="margin-left:15px; color:red;display:none; margin-bottom:5px" id="ErrorMessage"></p>
+                   
+                    <input type="text" id="id" name="id" value="45469" hidden>
+
+                    <div class="form_img_div">
+                    <img width="85" height="85" src="https://profile.justagg.com/images/profilePic/placeholder.png" id="form_img" class="form_img_uploaded">
+                    </div>
+                    <label class="input_label" for="form_img_input" style="margin-top:10px; margin-bottom:15px">
+                        <span class="form_img_btn">Add image</span>
+                        <input type="file" name="form_image" id="form_img_input" onchange="loadFormImage(event)" hidden>
+                    </label>
+                    
+                   <label class="input_label" for="name">Name *</label>
+                   <input type="text" class="input_field" name="name" id="name" placeholder="Enter Name" required>
+
+                   <label class="input_label" for="email">Email</label>
+                   <input type="email" class="input_field" name="email" id="email" placeholder="Enter Email">
+
+                   <label class="input_label" for="phone">Phone Number *</label>
+                   <input type="tel" class="input_field" name="phone" id="phone" placeholder="Enter phone Number" required>
+                   <div id="form_more_btn">
+                    Add more info <img width="15" height="15" src="https://img.icons8.com/ios-glyphs/90/null/expand-arrow--v1.png"/>
+                   </div>
+                   <div id="form_more_div" style="display: none">
+                   <label class="input_label" for="job">Job Title</label>
+                   <input type="text" class="input_field" name="job_title" id="job_title" placeholder="Enter Job Title" required>
+
+                    <label class="input_label" for="company">Company</label>
+                   <input type="text" class="input_field" name="company" id="company" placeholder="Enter company name" required>
+                   
+                   <label class="input_label" for="message">Message</label>
+                   <textarea type="text" class="input_field" name="message" id="message" placeholder="Write Message" style="min-height:100px; max-width:86%; min-width:86%; border-radius:12px !important" required></textarea>
+                   </div>
+
+                    <input type="submit" class="submit" id="submit" onclick="submitted()" value="Exchange Contact">
+
+
+
+
+      </div>
+      </form>          
+
+    </div> 
+<!-- alert start -->
+ 
+<div class="alert_msg_bar">
+
+
+    <img style="z-index: 6; " height="23" width="23" src="https://img.icons8.com/material-outlined/96/null/checked--v1.png"/>
+    <p style="font-size: 1rem;" class="alert_text">Contact submited...</p>
+    <i style="z-index: 1; font-size: 1.5rem;" class="fa fa-close alert_bar_close" style="
+                color: black;"></i>
+</div>
+<!-- alert end -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+        <script>
+      
+      setTimeout(function() {
+    document.getElementById("preloaders").style.visibility = "hidden";
+    document.getElementById("container").style.visibility = "visible";
+    document.getElementById("container").style.display = "flex";
+
+    
+    
+}, 1500);
+
+
+/****************** lead form submit ******************/
+
+    document.getElementById("submit").addEventListener("click", function(event){
+    
+    event.preventDefault()
+    });
+
+    function clearinputData()
+    {
+    $('#name').val("");
+    $('#email').val("");
+    $('#phone').val("");
+    $('#message').val("");
+    $('#job_title').val("");
+    $('#company').val("");
+    $('#form_img_input').val("");
+    var image = document.getElementById('form_img');
+    image.src = "/images/profilePic/placeholder.png";
+    }
+    function submitted(){
+
+    var formData = new FormData(); 
+    var id = $('#id').val();
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var phone = $('#phone').val();
+    var message = $('#message').val();
+    var job_title = $('#job_title').val();
+    var company = $('#company').val();
+    
+    var form_image=document.getElementById('form_img_input');
+    
+     if(form_image.files.length > 0 )
+            {
+                var image = form_image.files[0];
+                 formData.append('image', image);
+            }
+
+
+     formData.append('userid', id);
+        formData.append('email', email);
+       formData.append('name', name);
+       formData.append('phone', phone);
+        formData.append('message', message);
+        formData.append('job', job_title);
+        formData.append('company', company);
+        formData.append('message', message);
+        
+        
+        
+
+    if(name=="" || phone=="")
+    {
+        $('#ErrorMessage').text("Fill required fields."); 
+        $('#ErrorMessage').css("display","block"); 
+         setTimeout(function() {
+        $('#ErrorMessage').text(""); 
+        $('#ErrorMessage').css("display","none"); 
+     }, 4000);
+    }
+    
+
+    else{
+          $('#modal').css('display','none');   
+        $('#container').css('display','flex');
+        $('body').css('background-color','white');
+
+              $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+    $.ajax({
+        type: 'POST',
+        contentType: 'multipart/form-data',
+        cache: false,
+            contentType: false,
+            processData: false,
+    dataType: 'JSON',
+        url: "/submit_contact",
+        data: formData, //{userid:id,email: email, phone:phone, company:company, job:job_title, name: name, message:message},
+
+    success: function(data) {
+      //  console.log(data);
+        clearinputData();
+        $('.alert_text').text('contact submitted...');
+        $('.alert_msg_bar').css('display','flex');
+         setTimeout(function() {
+        $('.alert_msg_bar').css('display','none');
+     }, 2500);
+
+/******************* work to handle vcf download if leaf false and user click on connect ********/
+         var user_username = $('#user_username').val();
+         location.href="/download_vcf/"+user_username;
+        //  var vcf_true = $('#vcf_true').val();
+        //  vcf_true = parseInt(vcf_true);
+        //  if(vcf_true==1)
+        //  {
+                 
+        //  }
+
+/******************* handle vcf end ********/
+        if(data.success)
+        {
+       //   $('#successMessage').text(data.success);   
+        }
+      
+       // cleardata();
+       // window.location.assign('/user_view');
+      //  $('#successMessage').text("Account Registerd Successfully."); 
+        }, 
+
+     error: function(errors) {
+      /*  cleardata();
+            $('#emailError').text(errors.responseJSON.errors.email); 
+            $('#usernameError').text(errors.responseJSON.errors.username);
+            $('#passwordError').text(errors.responseJSON.errors.password); */
+        }
+
+  });
+        }      
+  }  
+</script>
+
+ <script>
+                    function openPayModal(index)
+                    {
+                        $('#pay_modal'+index).css('display','flex');
+                    }
+                    function closePayModal()
+                    {
+                        $('.pay_modal').css('display','none');
+                    }
+            function copyPayId(id) {
+
+           // var copy_content = copy_link_input.value;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(id).then(function() {
+                    //  console.log("Text copied to clipboard.");
+                    // $('.alert_msg p').text("Profile link is copied.");
+                    // $('.alert_msg').css('display', 'flex');
+
+                    //    alert("link copied: " + copy_content);
+                });
+            
+                 $('.alert_text').text('Copied...');
+        $('.alert_msg_bar').css('display','flex');
+         setTimeout(function() {
+        $('.alert_msg_bar').css('display','none');
+     }, 1500);
+            } else {
+                console.log("site is not.");
+            }
+        }
+        
+        // <input type="text" id="copyInput" style="position:absolute;left:-1000px;">
+
+//                 function copyPayId(id) {
+//   var copyInput = document.querySelector('#copyInput');
+//   copyInput.value = id;
+//   copyInput.select();
+//   document.execCommand('copy');
+// }
+        
+    </script>
+<script>
+       var loadFormImage = function(event) {
+        var image = document.getElementById('form_img');
+        image.src = URL.createObjectURL(event.target.files[0]);
+      };
+</script>
+<script>
+   
+$("#connect_btn").on("click", function() {
+       
+                var user_username = $('#user_username').val();
+          location.href="/download_vcf/"+user_username;
+                
+   });
+   $("#form_more_btn").on("click", function() {
+        $('#form_more_div').css('display','block'); 
+        $('#form_more_btn').css('display','none'); 
+   });
+
+$(".form_close").on("click", function() {
+
+       $('#modal').css('display','none');   
+        $('#container').css('display','flex');
+        $('body').css('background-color','white');
+
+        $('#form_more_div').css('display','none'); 
+        $('#form_more_btn').css('display','block'); 
+   });
+
+  
+
+</script>
+ <!-- update analytics on click -->  
+                <script>
+                    function socialClick(name, value, linkId, userId)
+                    {
+                     //   console.log(1);
+    var formData = new FormData(); 
+  
+     formData.append('link_id', linkId);
+       formData.append('name', name);
+        formData.append('value', value);
+        formData.append('userid', userId);
+
+              $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+    $.ajax({
+        type: 'POST',
+        contentType: 'multipart/form-data',
+        cache: false,
+            contentType: false,
+            processData: false,
+    dataType: 'JSON',
+        url: "/socialClick",
+        data: formData, //{userid:id,email: email, phone:phone, company:company, job:job_title, name: name, message:message},
+
+    success: function(data) {
+     //   console.log(data.link);
+        // if(data.name!="Google Pay" && data.name!="Paytm" && data.name!="Phonepe" && data.name!="Upi" )
+        // {
+        // window.open(data.link);
+        // }
+        }, 
+
+     error: function(errors) {
+        }
+
+  });
+                    }
+                    
+                </script>
+ <!-- analytics updation end -->  
+    </body>
+</html>
+
+
+<!-- CSV File -->
